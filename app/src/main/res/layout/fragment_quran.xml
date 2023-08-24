@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.tabs.quraan.QuranFragment">
+
+    <ImageView
+        android:id="@+id/header_quran_iv"
+        android:layout_width="205dp"
+        android:layout_height="227dp"
+        android:src="@drawable/quraan_img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/h_line1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/header_quran_iv" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/elmessiri"
+        android:gravity="center"
+        android:text="@string/surah_number"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/h_line2"
+        app:layout_constraintEnd_toStartOf="@id/v_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/h_line1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/elmessiri"
+        android:gravity="center"
+        android:text="@string/surah_name"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/h_line2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/v_line"
+        app:layout_constraintTop_toBottomOf="@id/h_line1" />
+
+    <View
+        android:id="@+id/h_line2"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/h_line1" />
+
+    <View
+        android:id="@+id/v_line"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/h_line1" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/quran_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/h_line2"
+        tools:listitem="@layout/item_sura_number_and_name" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
