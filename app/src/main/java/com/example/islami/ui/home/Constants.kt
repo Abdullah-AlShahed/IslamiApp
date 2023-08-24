@@ -1,6 +1,8 @@
 package com.example.islami.ui.home
 
 object Constants {
+
+
     var arSuras = listOf(
         "الفاتحه",
         "البقرة",

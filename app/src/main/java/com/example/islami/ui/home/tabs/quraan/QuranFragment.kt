@@ -30,13 +30,7 @@ class QuranFragment : Fragment() {
         })
         quranAdapter.onItemClicked =
             QuranSuraRecyclerAdapter.onItemClickListner { position, sura ->
-                val suraFragment = SuraFragment()
-                val bundle = Bundle()
-                bundle.putInt("suraNumber", Sura.)
-                suraFragment.arguments = bundle
-                requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(com.example.islami.R.id.main_container, suraFragment)
-                    .addToBackStack(null).commit()
+
             }
 
         quranRV.adapter = quranAdapter
