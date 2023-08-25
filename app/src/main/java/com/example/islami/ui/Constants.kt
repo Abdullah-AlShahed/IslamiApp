@@ -1,4 +1,4 @@
-package com.example.islami.ui.home
+package com.example.islami.ui
 
 object Constants {
 

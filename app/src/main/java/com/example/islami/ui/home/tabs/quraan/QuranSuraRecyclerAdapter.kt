@@ -26,7 +26,6 @@ class QuranSuraRecyclerAdapter(var surasLst: List<Sura>) :
             holder.bind.root.setOnClickListener {
                 onItemClicked?.onItemClick(position, surasLst[position])
             }
-
         }
     }
 

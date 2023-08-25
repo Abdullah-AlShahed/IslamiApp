@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.islami.databinding.FragmentQuranBinding
-import com.example.islami.ui.home.Constants
+import com.example.islami.ui.Constants
 
 class QuranFragment : Fragment() {
     lateinit var bind: FragmentQuranBinding
