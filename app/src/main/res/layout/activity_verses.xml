@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/home_background"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.home.tabs.quraan.SuraDetailsActivity">
+    tools:context=".ui.home.tabs.quraan.verses.VersesActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/main_appbar"
@@ -20,6 +20,17 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/sura_details_back_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:background="@color/colorPrimary"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_back" />
 
             <TextView
                 android:id="@+id/sura_title_tv"
@@ -49,19 +60,19 @@
         app:layout_constraintTop_toBottomOf="@id/main_appbar">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ayat_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:orientation="vertical"
             android:scrollbarDefaultDelayBeforeFade="0"
             android:scrollbarFadeDuration="0"
-            android:scrollbarSize="5dp"
             android:scrollbarStyle="outsideOverlay"
             android:scrollbarThumbVertical="@color/colorPrimary"
             android:scrollbarTrackVertical="@color/white"
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/ayah_details" />
+            tools:listitem="@layout/verse" />
 
     </androidx.cardview.widget.CardView>
 

@@ -1,9 +1,9 @@
 package com.example.islami.ui
 
 object Constants {
-
-
-    var arSuras = listOf(
+    const val EXTRA_CHAPTER_INDEX = "index"
+    const val EXTRA_CHAPTER_NAME = "name"
+    var Chapters_Names = listOf(
         "الفاتحه",
         "البقرة",
         "آل عمران",

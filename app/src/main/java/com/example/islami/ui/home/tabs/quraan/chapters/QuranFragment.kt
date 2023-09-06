@@ -1,5 +1,6 @@
-package com.example.islami.ui.home.tabs.quraan
+package com.example.islami.ui.home.tabs.quraan.chapters
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.islami.databinding.FragmentQuranBinding
 import com.example.islami.ui.Constants
+import com.example.islami.ui.home.tabs.quraan.verses.VersesActivity
 
 class QuranFragment : Fragment() {
     lateinit var bind: FragmentQuranBinding
-    lateinit var quranAdapter: QuranSuraRecyclerAdapter
+    lateinit var quranAdapter: ChaptersAdapter
     lateinit var quranRV: RecyclerView
 
     override fun onCreateView(
@@ -25,15 +27,21 @@ class QuranFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         quranRV = bind.quranRv
-        quranAdapter = QuranSuraRecyclerAdapter(Constants.arSuras.map {
-            Sura(it, Constants.arSuras.indexOf(it) + 1)
+        quranAdapter = ChaptersAdapter(Constants.Chapters_Names.map {
+            Chapter(it, Constants.Chapters_Names.indexOf(it) + 1)
         })
-        quranAdapter.onItemClicked =
-            QuranSuraRecyclerAdapter.onItemClickListner { position, sura ->
-
-            }
+        quranAdapter.onItemClicked = ChaptersAdapter.onItemClickListner { position, sura ->
+            startSuraDetailsActivity(position, sura)
+        }
 
         quranRV.adapter = quranAdapter
+    }
+
+    private fun startSuraDetailsActivity(position: Int, chapter: Chapter) {
+        val intent = Intent(requireContext(), VersesActivity::class.java)
+        intent.putExtra(Constants.EXTRA_CHAPTER_NAME, chapter.chapterName)
+        intent.putExtra(Constants.EXTRA_CHAPTER_INDEX, position + 1)
+        startActivity(intent)
     }
 
 
