@@ -31,13 +31,15 @@ class QuranFragment : Fragment() {
             Chapter(it, Constants.Chapters_Names.indexOf(it) + 1)
         })
         quranAdapter.onItemClicked = ChaptersAdapter.onItemClickListner { position, sura ->
-            startSuraDetailsActivity(position, sura)
+            startVersesActivity(position, sura)
         }
-
         quranRV.adapter = quranAdapter
+
+
     }
 
-    private fun startSuraDetailsActivity(position: Int, chapter: Chapter) {
+
+    private fun startVersesActivity(position: Int, chapter: Chapter) {
         val intent = Intent(requireContext(), VersesActivity::class.java)
         intent.putExtra(Constants.EXTRA_CHAPTER_NAME, chapter.chapterName)
         intent.putExtra(Constants.EXTRA_CHAPTER_INDEX, position + 1)

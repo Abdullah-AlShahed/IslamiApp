@@ -6,6 +6,6 @@
     <string name="hadeth">حديث</string>
     <string name="sebha">سبحة</string>
     <string name="radio">راديو</string>
-    <string name="surah_number">Surah Number</string>
-
+    <string name="surah_number">رقم السورة</string>
+    <string name="surah_name">اسم السورة</string>
 </resources>
