@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.tabs.quraan.chapters.QuranFragment">
+    tools:background="@drawable/home_background"
+    tools:context=".ui.home.tabs.quraan.chapter.QuranFragment">
 
     <ImageView
         android:id="@+id/header_quran_iv"
         android:layout_width="205dp"
         android:layout_height="227dp"
-        android:src="@drawable/quraan_img"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/moshaf_img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -30,7 +34,7 @@
         android:id="@+id/surah_number_tv"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:fontFamily="@font/elmessiri"
+        android:fontFamily="@font/naskh_bold"
         android:gravity="center"
         android:text="@string/surah_number"
         android:textColor="@color/black"
@@ -45,7 +49,7 @@
         android:id="@+id/surah_name_tv"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:fontFamily="@font/elmessiri"
+        android:fontFamily="@font/naskh_bold"
         android:gravity="center"
         android:text="@string/surah_name"
         android:textColor="@color/black"
@@ -84,8 +88,10 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/h_line2"
+        app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/chapter" />
 
 

@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home_background"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.home.tabs.quraan.chapterContent.VersesActivity">
+    tools:context=".ui.home.tabs.hadeth.hadethContent.HadethContentActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/main_appbar"

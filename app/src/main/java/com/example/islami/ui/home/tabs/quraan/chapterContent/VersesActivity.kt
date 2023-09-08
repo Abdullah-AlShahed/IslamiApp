@@ -1,4 +1,4 @@
-package com.example.islami.ui.home.tabs.quraan.verses
+package com.example.islami.ui.home.tabs.quraan.chapterContent
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +25,7 @@ class VersesActivity : AppCompatActivity() {
         initParams()
         initViews()
         loadChapterFile()
+
     }
 
     private fun initViews() {

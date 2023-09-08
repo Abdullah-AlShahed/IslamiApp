@@ -1,15 +1,18 @@
-package com.example.islami.ui.home.tabs.quraan.chapters
+package com.example.islami.ui.home.tabs.quraan.chapter
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.islami.R
+import com.example.islami.databinding.ActivityHomeBinding
 import com.example.islami.databinding.FragmentQuranBinding
 import com.example.islami.ui.Constants
-import com.example.islami.ui.home.tabs.quraan.verses.VersesActivity
+import com.example.islami.ui.home.tabs.quraan.chapterContent.VersesActivity
 
 class QuranFragment : Fragment() {
     lateinit var bind: FragmentQuranBinding
@@ -36,6 +39,15 @@ class QuranFragment : Fragment() {
         quranRV.adapter = quranAdapter
 
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val toolbarTitle: TextView = requireActivity().findViewById(R.id.toolbar_title)
+        toolbarTitle.text = getString(R.string.the_quraan)
+        bind.headerQuranIv.setOnClickListener {
+            quranRV.smoothScrollToPosition(0)
+        }
     }
 
 

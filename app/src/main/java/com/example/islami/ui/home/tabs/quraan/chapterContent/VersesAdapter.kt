@@ -1,4 +1,4 @@
-package com.example.islami.ui.home.tabs.quraan.verses
+package com.example.islami.ui.home.tabs.quraan.chapterContent
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

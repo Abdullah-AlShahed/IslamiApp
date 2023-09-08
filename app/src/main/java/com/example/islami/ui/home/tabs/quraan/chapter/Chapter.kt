@@ -1,4 +1,4 @@
-package com.example.islami.ui.home.tabs.quraan.chapters
+package com.example.islami.ui.home.tabs.quraan.chapter
 
 data class Chapter(
     val chapterName: String? = null,

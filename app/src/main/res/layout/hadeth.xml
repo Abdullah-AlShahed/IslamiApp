@@ -6,17 +6,17 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/ayah_tv"
+        android:id="@+id/hadeth_name_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/hafs"
+        android:fontFamily="@font/surah_name"
         android:gravity="center"
         android:padding="10dp"
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="يَا زَكَرِيَّا إِنَّا نُبَشِّرُكَ بِغُلَامٍ اسْمُهُ يَحْيَى لَمْ نَجْعَلْ لَهُ مِنْ قَبْلُ سَمِيًّا" />
+        tools:text="الحديث الأول" />
 
     <View
         android:id="@+id/h_line1"
@@ -25,7 +25,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:background="@color/colorPrimary"
-        app:layout_constraintTop_toBottomOf="@id/ayah_tv" />
+        app:layout_constraintTop_toBottomOf="@id/hadeth_name_tv" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

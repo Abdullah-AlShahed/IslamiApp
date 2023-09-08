@@ -1,16 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:background="@drawable/home_background">
+
+    <ImageView
+        android:id="@+id/header_hadeth_iv"
+        android:layout_width="205dp"
+        android:layout_height="227dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/hadeth_img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/h_line1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/header_hadeth_iv" />
+
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hadeth"
-        android:textSize="130sp"
+        android:id="@+id/ahadeth_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/naskh_bold"
+        android:gravity="center"
+        android:text="@string/hadeth"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/h_line2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/h_line1" />
+
+    <View
+        android:id="@+id/h_line2"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/h_line1" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hadeth_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/h_line2"
+        tools:listitem="@layout/hadeth" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,10 @@
         android:theme="@style/Theme.Islami"
         tools:targetApi="31">
         <activity
-            android:name=".ui.home.tabs.quraan.verses.VersesActivity"
+            android:name=".ui.home.tabs.hadeth.hadethContent.HadethContentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.tabs.quraan.chapterContent.VersesActivity"
             android:exported="false" />
         <activity
             android:name=".ui.home.HomeActivity"
