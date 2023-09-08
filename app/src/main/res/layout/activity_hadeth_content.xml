@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/home_background"
     tools:context=".ui.home.tabs.hadeth.hadethContent.HadethContentActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -57,7 +58,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/main_appbar">
 
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarDefaultDelayBeforeFade="0"
@@ -67,40 +68,26 @@
             android:scrollbarTrackVertical="@color/white"
             android:scrollbars="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/hadeth_tv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dthuluth"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="27sp"
+                tools:text="عن عبد الله بن عمرو رضي الله عنهما
+            عن النبي صلى الله عليه وسلم قال :
+            ( أربع من كن فيه كان منافقا ، وإن كانت خصلة
+             منهن فيه كانت فيه خصلة من النفاق حتى يدعها
+            : من إذا حدث كذب ، وإذا وعد أخلف ،
+             وإذا خاصم فجر ، وإذا عاهد غدر ) .
+            رواه البخاري [ رقم : 34 ] ، ومسلم [ رقم : 58 ] .
+            " />
+        </ScrollView>
 
-                <TextView
-                    android:id="@+id/basmalah"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:fontFamily="@font/hafs"
-                    android:gravity="center"
-                    android:text="⟪ بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ⟫"
-                    android:textColor="@color/black"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:id="@+id/h_line1"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginEnd="50dp"
-                    android:background="@color/colorPrimary" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/ayat_rv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/verse" />
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
