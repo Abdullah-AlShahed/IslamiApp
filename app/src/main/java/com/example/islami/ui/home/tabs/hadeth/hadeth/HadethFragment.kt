@@ -1,14 +1,16 @@
 package com.example.islami.ui.home.tabs.hadeth.hadeth
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import com.example.islami.R
 import com.example.islami.databinding.FragmentHadethBinding
+import com.example.islami.ui.Constants
+import com.example.islami.ui.home.tabs.hadeth.hadethContent.HadethContentActivity
 
 class HadethFragment : Fragment() {
     lateinit var bind: FragmentHadethBinding
@@ -29,7 +31,16 @@ class HadethFragment : Fragment() {
 
     private fun initViews() {
         adapter = HadethAdapter(null)
-        bind.hadethRv.adapter = adapter
+        adapter.onItemClicked =
+            HadethAdapter.onItemClickListner { position, hadeth ->
+                ShowHadethContentActivity(hadeth)
+            }
+    }
+
+    private fun ShowHadethContentActivity(hadeth: Hadeth) {
+        val intent = Intent(activity, HadethContentActivity::class.java)
+        intent.putExtra(Constants.EXTRA_HADETH, hadeth)
+        startActivity(intent)
     }
 
     override fun onStart() {

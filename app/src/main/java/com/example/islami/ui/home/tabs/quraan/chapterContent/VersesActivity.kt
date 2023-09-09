@@ -18,18 +18,17 @@ class VersesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bind = ActivityVersesBinding.inflate(layoutInflater)
         setContentView(bind.root)
-        bind.suraDetailsBackBtn.setOnClickListener {
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-            finish()
-        }
-        initParams()
         initViews()
+        initParams()
         loadChapterFile()
-
     }
 
     private fun initViews() {
         bind.suraTitleTv.text = suraName
+        bind.suraDetailsBackBtn.setOnClickListener {
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            finish()
+        }
     }
 
     private fun initParams() {
@@ -42,7 +41,6 @@ class VersesActivity : AppCompatActivity() {
         val fileContent = assets.open(fileName).bufferedReader().use { it.readText() }
         val chapterVerses = fileContent.trim().split("\n")
         bindVersesToRV(chapterVerses)
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     private fun bindVersesToRV(chapterVerses: List<String>) {
